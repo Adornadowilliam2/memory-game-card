@@ -1,4 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
+import meralcoIncorporated from "../assets/meralcoincorporated.png";
+import mazda from "../assets/mazda.png";
+import gtfoundation from "../assets/gtfoundation.png";
+import analog from "../assets/analog.png";
+import cdo from "../assets/cdo.png";
+import meralco from "../assets/meralco.png";
+import unilever from "../assets/unilever.png";
+import wof from "../assets/wof.png";
+import cummins from "../assets/cummins.png";
 
 const Game = ({ user, updateLeaderboard }) => {
   const [cards, setCards] = useState([]);
@@ -13,127 +22,109 @@ const Game = ({ user, updateLeaderboard }) => {
     const cardData = [
       {
         id: 1,
-        value:
-          "https://www.mfi.org.ph/wp-content/uploads/2023/04/Past-MFI-logo.png",
+        value: meralcoIncorporated,
         flipped: false,
         matched: false,
       },
       {
         id: 2,
-        value:
-          "https://www.mfi.org.ph/wp-content/uploads/2023/04/Past-MFI-logo.png",
+        value: meralcoIncorporated,
         flipped: false,
         matched: false,
       },
       {
         id: 3,
-        value:
-          "https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png",
+        value: mazda,
         flipped: false,
         matched: false,
       },
       {
         id: 4,
-        value:
-          "https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png",
+        value: mazda,
         flipped: false,
         matched: false,
       },
       {
         id: 5,
-        value:
-          "https://th.bing.com/th/id/OIP.u5LIM8ifr27FC2m562XivwHaGI?rs=1&pid=ImgDetMain",
+        value: gtfoundation,
         flipped: false,
         matched: false,
       },
       {
         id: 6,
-        value:
-          "https://th.bing.com/th/id/OIP.u5LIM8ifr27FC2m562XivwHaGI?rs=1&pid=ImgDetMain",
+        value: gtfoundation,
         flipped: false,
         matched: false,
       },
       {
         id: 7,
-        value:
-          "https://th.bing.com/th/id/OIP.H4oJhnFiCKhUeFvSMA-nxAHaHa?rs=1&pid=ImgDetMain",
+        value: analog,
         flipped: false,
         matched: false,
       },
       {
         id: 8,
-        value:
-          "https://th.bing.com/th/id/OIP.H4oJhnFiCKhUeFvSMA-nxAHaHa?rs=1&pid=ImgDetMain",
+        value: analog,
         flipped: false,
         matched: false,
       },
       {
         id: 9,
-        value:
-          "https://business.inquirer.net/files/2020/06/CDO-NEW-LOGO_CMYK_3D_Logo-620x434.png",
+        value: cdo,
         flipped: false,
         matched: false,
       },
       {
         id: 10,
-        value:
-          "https://business.inquirer.net/files/2020/06/CDO-NEW-LOGO_CMYK_3D_Logo-620x434.png",
+        value: cdo,
         flipped: false,
         matched: false,
       },
       {
         id: 11,
-        value:
-          "https://logos-download.com/wp-content/uploads/2021/01/Meralco_Logo.png",
+        value: meralco,
         flipped: false,
         matched: false,
       },
       {
         id: 12,
-        value:
-          "https://logos-download.com/wp-content/uploads/2021/01/Meralco_Logo.png",
+        value: meralco,
         flipped: false,
         matched: false,
       },
       {
         id: 13,
-        value:
-          "https://th.bing.com/th/id/OIP.a9yOFPh3pKFbwpVq_OVEogHaIM?w=1440&h=1592&rs=1&pid=ImgDetMain",
+        value: unilever,
         flipped: false,
         matched: false,
       },
       {
         id: 14,
-        value:
-          "https://th.bing.com/th/id/OIP.a9yOFPh3pKFbwpVq_OVEogHaIM?w=1440&h=1592&rs=1&pid=ImgDetMain",
+        value: unilever,
         flipped: false,
         matched: false,
       },
       {
         id: 15,
-        value:
-          "https://th.bing.com/th/id/OIP.nBYH_F7tPkLWGfYbyT5sqAHaFp?rs=1&pid=ImgDetMain",
+        value: wof,
         flipped: false,
         matched: false,
       },
       {
         id: 16,
-        value:
-          "https://th.bing.com/th/id/OIP.nBYH_F7tPkLWGfYbyT5sqAHaFp?rs=1&pid=ImgDetMain",
+        value: wof,
         flipped: false,
         matched: false,
       },
       {
         id: 17,
-        value:
-          "https://download.logo.wine/logo/Cummins/Cummins-Logo.wine.png",
+        value: cummins,
         flipped: false,
         matched: false,
       },
       {
         id: 18,
-        value:
-          "https://download.logo.wine/logo/Cummins/Cummins-Logo.wine.png",
+        value: cummins,
         flipped: false,
         matched: false,
       },
@@ -238,18 +229,17 @@ const Game = ({ user, updateLeaderboard }) => {
             onClick={() => handleCardFlip(index)}
           >
             {card.flipped || matchedCards.includes(card.value) ? (
- 
-                <img
-                  src={`${card.value}`}
-                  alt={`${card.value}`}
-                  style={{
-                    width: "100px",
-                    height: "100px",
-                    transform: matchedCards.includes(card.value) ? "rotateY(0deg)" : "rotateY(180deg)",
-                 
-                  }}
-                />
-        
+              <img
+                src={`${card.value}`}
+                alt={`${card.value}`}
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  transform: matchedCards.includes(card.value)
+                    ? "rotateY(0deg)"
+                    : "rotateY(180deg)",
+                }}
+              />
             ) : (
               "❓"
             )}

@@ -1,4 +1,3 @@
-
 * {
   padding: 0;
   margin: 0;
@@ -13,10 +12,18 @@
   margin-top: 30px;
 }
 
+#welcome {
+  font-size: 3rem;
+}
+
 @media (max-width: 767px) {
   .cards-container {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  #welcome {
+    font-size: 1.5rem;
   }
 }
 
@@ -95,13 +102,12 @@ button {
 
 button:hover {
   background-color: #0056b3;
-} 
+}
 
 input {
   padding: 10px;
   margin-right: 10px;
 }
-
 
 .leaderboard-container {
   background-color: #fff;
@@ -117,20 +123,17 @@ input {
   margin-top: 5vh;
 }
 
-
 .title {
   font-size: 2em;
   margin-bottom: 20px;
   color: #4caf50;
 }
 
-
 .leaderboard {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 
 .entry {
   display: flex;
@@ -145,7 +148,6 @@ input {
   background-color: #f1f1f1;
 }
 
-
 .rank,
 .name,
 .score {
@@ -153,16 +155,13 @@ input {
   font-weight: bold;
 }
 
-
 .rank {
   color: #4caf50;
 }
 
-
 .name {
   color: #555;
 }
-
 
 .score {
   color: #888;

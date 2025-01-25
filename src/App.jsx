@@ -6,30 +6,25 @@ const App = () => {
   const [user, setUser] = useState(localStorage.getItem("userName") || "");
   const [leaderboard, setLeaderboard] = useState([]);
 
-  
   useEffect(() => {
     const storedLeaderboard =
       JSON.parse(localStorage.getItem("leaderboard")) || [];
     setLeaderboard(storedLeaderboard);
   }, []);
 
-  
   const handleLogout = () => {
-    
     localStorage.removeItem("userName");
     setUser("");
   };
 
-  
   const updateLeaderboard = (score, time, userName) => {
     const newLeaderboard = [...leaderboard, { score, time, userName }];
-    
+
     newLeaderboard.sort((a, b) => b.score - a.score || a.time - b.time);
     setLeaderboard(newLeaderboard);
     localStorage.setItem("leaderboard", JSON.stringify(newLeaderboard));
   };
 
-  
   const formatTime = (timeInMs) => {
     const minutes = Math.floor(timeInMs / 60000);
     const seconds = Math.floor((timeInMs % 60000) / 1000);
@@ -56,7 +51,7 @@ const App = () => {
             className="flex items-center justify-between"
             style={{ padding: "10px" }}
           >
-            <h2 className="font-bold " style={{ fontSize: "3rem" }}>
+            <h2 className="font-bold" id="welcome">
               Welcome, {user}
             </h2>{" "}
             <button onClick={handleLogout}>Quit</button>
